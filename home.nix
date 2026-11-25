@@ -4,6 +4,14 @@ let
   username = builtins.getEnv "USER";
   theme = import ./theme.nix;
   hex = lib.removePrefix "#";
+  swaylock-i3lock = pkgs.runCommand "swaylock-effects-i3lock" {
+        nativeBuildInputs = [ pkgs.perl ];
+    } ''
+    mkdir -p $out
+    cp -r ${pkgs.swaylock-effects}/* $out/
+    chmod -R u+w $out/bin
+    perl -pi -e 's/swaylock\x00/i3lock\x00\x00\x00/g' $out/bin/swaylock
+  '';
 in
 {
   imports = [
@@ -43,11 +51,7 @@ in
           ) &
           TIMER_PID=$!
 
-          ${pkgs.swaylock-effects.overrideAttrs (old: {
-            postPatch = (old.postPatch or "") + ''
-              substituteInPlace pam.c --replace-fail '"swaylock"' '"i3lock"'
-            '';
-          })}/bin/swaylock \
+          ${swaylock-i3lock}/bin/swaylock \
             $WALLPAPER_ARGS \
             --clock \
             --indicator \
