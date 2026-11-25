@@ -2,6 +2,8 @@
 
 let
   username = builtins.getEnv "USER";
+  theme = import ./theme.nix;
+  hex = lib.removePrefix "#";
 in
 {
   imports = [
@@ -26,7 +28,7 @@ in
         wmenu
 
         (writeShellScriptBin "i3lock" ''
-          WALLPAPER_ARGS="--color 0D0F12"
+          WALLPAPER_ARGS=""
           if [ -f "$HOME/afs/wallpaper.png" ]; then
             WALLPAPER_ARGS="--image $HOME/afs/wallpaper.png --scaling fill --effect-blur 7x5 --effect-vignette 0.5:0.5"
           elif [ -f "$HOME/afs/wallpaper.jpg" ]; then
@@ -50,17 +52,26 @@ in
             --clock \
             --indicator \
             --indicator-idle-visible \
-            --indicator-radius 110 \
+            --indicator-radius 125 \
             --indicator-thickness 10 \
-            --font "JetBrains Mono" \
+            --font "${theme.fonts.main.name}" \
             --timestr "%H:%M:%S" \
-            --datestr "Off $OFF_TIME" \
-            --color 0D0F12 \
-            --inside-color 15171CC0 \
-            --ring-color 4A8CFF \
-            --key-hl-color A8FF50 \
-            --bs-hl-color FF2E50 \
-            --text-color E0E7FF \
+            --datestr "${username} • Off $OFF_TIME" \
+            --color ${hex theme.colors.background} \
+            --inside-color ${hex theme.colors.background}C0 \
+            --inside-clear-color ${hex theme.colors.backgroundAlt}C0 \
+            --inside-ver-color ${hex theme.colors.backgroundAlt}C0 \
+            --inside-wrong-color ${hex theme.colors.backgroundAlt}C0 \
+            --ring-color ${hex theme.colors.blue} \
+            --ring-clear-color ${hex theme.colors.yellow} \
+            --ring-ver-color ${hex theme.colors.cyan} \
+            --ring-wrong-color ${hex theme.colors.red} \
+            --key-hl-color ${hex theme.colors.green} \
+            --bs-hl-color ${hex theme.colors.red} \
+            --text-color ${hex theme.colors.foreground} \
+            --text-clear-color ${hex theme.colors.yellow} \
+            --text-ver-color ${hex theme.colors.cyan} \
+            --text-wrong-color ${hex theme.colors.red} \
             --line-color 00000000 \
             --separator-color 00000000
 
