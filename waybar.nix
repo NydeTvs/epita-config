@@ -127,7 +127,7 @@ in
 
       #workspaces button.active {
         background-color: transparent;
-        color: ${theme.colors.cyan};
+        color: ${theme.colors.magenta};
         border-bottom: 2px solid ${theme.colors.blue};
       }
  
@@ -155,7 +155,7 @@ in
       }
 
       #clock {
-        color: ${theme.colors.blue};
+        color: ${theme.colors.magenta};
         font-weight: bold;
       }
 
@@ -164,7 +164,7 @@ in
       }
 
       #pulseaudio.muted {
-        color: ${theme.colors.red};
+        color: ${theme.colors.blue};
       }
 
       #network {
