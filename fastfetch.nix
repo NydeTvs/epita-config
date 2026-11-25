@@ -11,12 +11,12 @@ in
         type = "builtin";
         source = "nixos";
         color = {
-          "1" = theme.colors.yellow;      
-          "2" = theme.colors.green;
-          "3" = theme.colors.yellow;
-          "4" = theme.colors.green;
-          "5" = theme.colors.yellow;
-          "6" = theme.colors.green;
+          "1" = theme.colors.blue;
+          "2" = theme.colors.magenta;
+          "3" = theme.colors.blue;
+          "4" = theme.colors.magenta;
+          "5" = theme.colors.blue;
+          "6" = theme.colors.magenta;
         };
         padding = {
           top = 0;
@@ -28,19 +28,19 @@ in
         disableLinewrap = true;
         separator = ": ";
         color = {
-          keys = theme.colors.cursor;   
-          title = theme.colors.green;    
-          separator = theme.colors.green;   
-          output = theme.colors.foreground; 
+          keys = theme.colors.cyan;
+          title = theme.colors.magenta;
+          separator = theme.colors.blue;
+          output = theme.colors.foreground;
         };
       };
       modules = [
         {
           type = "title";
           color = {
-            user = theme.colors.green;
-            at = theme.colors.foreground;
-            host = theme.colors.cursor;
+            user = theme.colors.blue;
+            at = theme.colors.comment;
+            host = theme.colors.magenta;
           };
         }
         "separator"

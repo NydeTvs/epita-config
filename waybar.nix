@@ -86,14 +86,15 @@ in
       }
 
       window#waybar {
-        background-color: alpha(${theme.colors.background}, 0.4);
+        background-color: alpha(${theme.colors.background}, 0.82);
         color: ${theme.colors.foreground};
+        border: 1px solid ${theme.colors.darkBlue};
         border-radius: 8px;
       }
 
       tooltip {
         background-color: ${theme.colors.background};
-        border: 1px solid ${theme.colors.foreground};
+        border: 1px solid ${theme.colors.blue};
         border-radius: 8px;
       }
     
@@ -120,19 +121,19 @@ in
         box-shadow: none;
         -gtk-icon-shadow: none;
         -gtk-icon-effect: none;
-        background-color: ${theme.colors.darkGreen};
+        background-color: ${theme.colors.darkBlue};
         color: ${theme.colors.foreground};
       }
 
       #workspaces button.active {
         background-color: transparent;
-        color: ${theme.colors.yellow};
-        border-bottom: 2px solid ${theme.colors.green};
+        color: ${theme.colors.cyan};
+        border-bottom: 2px solid ${theme.colors.blue};
       }
  
       #workspaces button.active:hover {
-        background-color: ${theme.colors.darkGreen};
-        color: ${theme.colors.yellow};
+        background-color: ${theme.colors.darkBlue};
+        color: ${theme.colors.cyan};
         text-shadow: none;
         box-shadow: none;
         -gtk-icon-shadow: none;
@@ -141,7 +142,7 @@ in
 
       #workspaces button.urgent {
         background-color: transparent;
-        color: ${theme.colors.foreground};
+        color: ${theme.colors.red};
       }
 
       #clock, #pulseaudio, #network, #bluetooth, #tray, #window, #language {
@@ -154,7 +155,7 @@ in
       }
 
       #clock {
-        color: ${theme.colors.green};
+        color: ${theme.colors.blue};
         font-weight: bold;
       }
 
@@ -163,7 +164,7 @@ in
       }
 
       #pulseaudio.muted {
-        color: ${theme.colors.yellow};
+        color: ${theme.colors.red};
       }
 
       #network {
@@ -175,7 +176,7 @@ in
       }
 
       #bluetooth.connected {
-        color: ${theme.colors.green};
+        color: ${theme.colors.cyan};
       }
     '';
   };

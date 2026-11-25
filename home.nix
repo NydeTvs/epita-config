@@ -9,6 +9,8 @@ in
     ./waybar.nix
     ./neovim.nix
     ./fastfetch.nix
+    ./kitty.nix
+    ./starship.nix
   ];
 
   home.username = username;
@@ -87,8 +89,8 @@ in
           pkill swaybg || true
           ${pkgs.swaybg}/bin/swaybg -i "$HOME/afs/wallpaper.$ext" -m fill >/dev/null 2>&1 &
         '')
-        (writeShellScriptBin "alacritty-fetch" ''
-          exec alacritty -e sh -c 'fastfetch; exec "''${SHELL:-bash}"'
+        (writeShellScriptBin "kitty-fetch" ''
+          exec ${pkgs.kitty}/bin/kitty -e bash -c 'fastfetch; exec bash'
         '')
   ];
 }

@@ -49,7 +49,7 @@ in
     xkb_rules_layout=us
 
     # Global Keybinds
-    bind=super,Return,spawn,alacritty-fetch
+    bind=super,Return,spawn,kitty-fetch
     bind=super+shift,q,smartkillclient
     bind=super,d,spawn,wmenu-run
     bind=super+shift,e,spawn,powermenu

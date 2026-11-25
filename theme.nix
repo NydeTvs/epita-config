@@ -1,48 +1,56 @@
 {
+  # Tokyo Night (Night) palette
   colors = {
-    background = "#0D0F12";
-    foreground = "#E0E7FF";
-    cursor     = "#FFAD33";
-    selection  = "#3A4D94";
-    
-    black   = "#15171C"; 
-    red     = "#FF2E50"; 
-    green   = "#A8FF50"; 
-    yellow  = "#FFB320"; 
-    blue    = "#4A8CFF"; 
-    magenta = "#B05CFF"; 
-    cyan    = "#00E0FF"; 
-    white   = "#AAB6E0"; 
+    background    = "#1a1b26";
+    backgroundAlt = "#24283b";
+    foreground    = "#c0caf5";
+    cursor        = "#7aa2f7";
+    selection     = "#33467c";
 
-    brightBlack   = "#4A526E"; 
-    brightRed     = "#FF5575"; 
-    brightGreen   = "#C4FF8A"; 
-    brightYellow  = "#FFCC66"; 
-    brightBlue    = "#7AA5FF"; 
-    brightMagenta = "#C685FF"; 
-    brightCyan    = "#55F2FF"; 
-    brightWhite   = "#FFFFFF";
+    black   = "#15161e";
+    red     = "#f7768e";
+    green   = "#9ece6a";
+    yellow  = "#e0af68";
+    blue    = "#7aa2f7";
+    magenta = "#bb9af7";
+    cyan    = "#7dcfff";
+    white   = "#a9b1d6";
 
-    # Additional Colors
-    darkGreen    = "#547F28";
-    turquoise    = "#50E3C2";
-    darkYellow   = "#ACA33A";
+    brightBlack   = "#414868";
+    brightRed     = "#ff899d";
+    brightGreen   = "#9fe044";
+    brightYellow  = "#faba4a";
+    brightBlue    = "#8db0ff";
+    brightMagenta = "#c7a9ff";
+    brightCyan    = "#a4daff";
+    brightWhite   = "#c0caf5";
+
+    # Additional Tokyo Night accents
+    orange   = "#ff9e64";
+    teal     = "#1abc9c";
+    comment  = "#565f89";
+    darkBlue = "#292e42";
   };
 
   apps = {
     fastfetch = {
       borders = "90";
-      system = "yellow";
-      host = "green";
-      wm = "blue";
+      system = "blue";
+      host = "magenta";
+      wm = "cyan";
     };
     mango = {
-      focuscolor = "0x516c93ff";
+      focuscolor = "0x7aa2f7ff";
     };
     waybar = {
       height = 35;
       margin = 8;
       fontSize = 12;
+    };
+    kitty = {
+      opacity = 0.88;
+      padding = 10;
+      fontSize = 11;
     };
   };
 

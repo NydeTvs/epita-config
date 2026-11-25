@@ -43,15 +43,15 @@ in
 
       require("base16-colorscheme").setup({
         base00 = "${theme.colors.background}",
-        base01 = "${theme.colors.black}",
+        base01 = "${theme.colors.backgroundAlt}",
         base02 = "${theme.colors.selection}",
         base03 = "${theme.colors.brightBlack}",
         base04 = "${theme.colors.white}",
         base05 = "${theme.colors.foreground}",
         base06 = "${theme.colors.brightWhite}",
         base07 = "${theme.colors.brightWhite}",
-        base08 = "${theme.colors.white}",
-        base09 = "${theme.colors.cursor}",
+        base08 = "${theme.colors.red}",
+        base09 = "${theme.colors.orange}",
         base0A = "${theme.colors.yellow}",
         base0B = "${theme.colors.green}",
         base0C = "${theme.colors.cyan}",

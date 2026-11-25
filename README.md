@@ -5,11 +5,14 @@
 
 ## Flake Content :
  - Mango Window Manager (dwm based)
+ - Kitty
+ - Starship
  - Neovim
  - Waybar
+ - Fastfetch
  - SwayBG
  - WMenu
- - Jetbrains-Mono Nerd Font
+ - Jetbrains-Mono + Symbols Nerd Font
 
 ## Space Needed : 
 __~200Mo__ Compressed / 1.8Go Decompressed - Estimated Time to download : 45 seconds (in Epita machine rooms)
@@ -43,7 +46,7 @@ exec mango
 ## Features :
 All the usual EPITA keybinds are kept :
 - Win+D = Open drun (app launcher)
-- Win+Return = Open terminal
+- Win+Return = Open terminal (Kitty)
 - Win+Shift+Q = Close window
 
 Other features were added to fit with wayland :
@@ -60,8 +63,11 @@ Allows you to dynamically change your wallpaper. Creates a copy of the image pro
 
 ## Featured Repositories :
 [MangoWM](https://github.com/mangowm/mango) \
+[Kitty](https://github.com/kovidgoyal/kitty) \
+[Starship](https://github.com/starship/starship) \
 [Neovim](https://github.com/neovim/neovim) \
 [Waybar](https://github.com/alexays/waybar) \
+[Fastfetch](https://github.com/fastfetch-cli/fastfetch) \
 [SwayBG](https://github.com/swaywm/swaybg) \
 [WMenu](https://codeberg.org/adnano/wmenu)
 
