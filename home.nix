@@ -22,27 +22,47 @@ in
         wmenu
 
         (writeShellScriptBin "i3lock" ''
-            (
-                sleep 3600
-                systemctl poweroff
-            ) &
-            TIMER_PID=$!
+          WALLPAPER_ARGS="--color 0D0F12"
+          if [ -f "$HOME/afs/wallpaper.png" ]; then
+            WALLPAPER_ARGS="--image $HOME/afs/wallpaper.png --scaling fill --effect-blur 7x5 --effect-vignette 0.5:0.5"
+          elif [ -f "$HOME/afs/wallpaper.jpg" ]; then
+            WALLPAPER_ARGS="--image $HOME/afs/wallpaper.jpg --scaling fill --effect-blur 7x5 --effect-vignette 0.5:0.5"
+          fi
 
-        ${pkgs.swaylock.overrideAttrs (old: {
-          postPatch = (old.postPatch or "") + ''
-            substituteInPlace pam.c --replace-fail '"swaylock"' '"i3lock"'
-          '';
-        })}/bin/swaylock \
+          OFF_TIME=$(date -d "+1 hour" "+%H:%M")
+
+          (
+            sleep 3600
+            systemctl poweroff
+          ) &
+          TIMER_PID=$!
+
+          ${pkgs.swaylock-effects.overrideAttrs (old: {
+            postPatch = (old.postPatch or "") + ''
+              substituteInPlace pam.c --replace-fail '"swaylock"' '"i3lock"'
+            '';
+          })}/bin/swaylock \
+            $WALLPAPER_ARGS \
+            --clock \
+            --indicator \
+            --indicator-idle-visible \
+            --indicator-radius 110 \
+            --indicator-thickness 10 \
+            --font "JetBrains Mono" \
+            --timestr "%H:%M:%S" \
+            --datestr "Off $OFF_TIME" \
             --color 0D0F12 \
-            --inside-color 15171C \
+            --inside-color 15171CC0 \
             --ring-color 4A8CFF \
             --key-hl-color A8FF50 \
             --bs-hl-color FF2E50 \
-            --text-color E0E7FF
+            --text-color E0E7FF \
+            --line-color 00000000 \
+            --separator-color 00000000
 
-        pkill -P "$TIMER_PID" 2>/dev/null || true
-        kill "$TIMER_PID" 2>/dev/null || true
-        '')   
+          pkill -P "$TIMER_PID" 2>/dev/null || true
+          kill "$TIMER_PID" 2>/dev/null || true
+        '')
         (writeShellScriptBin "powermenu" ''
         choice=$(printf "Logout\nReboot\nShutdown" | wmenu -p "Session:")
         case "$choice" in
