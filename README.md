@@ -47,6 +47,9 @@ All the usual EPITA keybinds are kept :
 - Win+Return = Open terminal (Kitty)
 - Win+Shift+Q = Close window
 
+New keybinds :
+- Win+L = Lock session
+
 Other features were added to fit with wayland :
 
 ```
