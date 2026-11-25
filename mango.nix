@@ -53,6 +53,7 @@ in
     bind=super+shift,q,smartkillclient
     bind=super,d,spawn,wmenu-run
     bind=super+shift,e,spawn,powermenu
+    bind=super,l,spawn,i3lock
 
     # Navigation Keybinds
     bind=super,Left,focusdir,left

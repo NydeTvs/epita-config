@@ -13,6 +13,8 @@ in
     ./starship.nix
   ];
 
+  programs.bash.enable = true;
+
   home.username = username;
   home.homeDirectory = "/home/${username}";
   home.stateVersion = "24.11";
