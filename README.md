@@ -1,4 +1,4 @@
-## Welcome to your new EPITA's config
+# Welcome to your new EPITA's config
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZvPi0HkU5Ufv1065pf84EysQoC5BmfUX8yCUY3YJgPtx6p3i-_XdbcJY&s=10" alt="NixOS Logo" width="200"/>
 
 ## Flake Content :
