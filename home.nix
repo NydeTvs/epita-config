@@ -87,7 +87,7 @@ in
             --indicator-thickness 10 \
             --font "${theme.fonts.main.name}" \
             --timestr "%H:%M:%S" \
-            --datestr "${username} • Off $OFF_TIME" \
+            --datestr "${username}\nOff $OFF_TIME" \
             --color ${hex theme.colors.background} \
             --inside-color ${hex theme.colors.background}C0 \
             --inside-clear-color ${hex theme.colors.backgroundAlt}C0 \
