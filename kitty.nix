@@ -21,7 +21,7 @@ in
       background_opacity = theme.apps.kitty.opacity;
       window_padding_width = theme.apps.kitty.padding;
       hide_window_decorations = true;
-      confirm_os_window_close = 0;
+      confirm_os_window_close = -1;
 
       # Cursor
       cursor_shape = "beam";
