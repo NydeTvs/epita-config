@@ -52,7 +52,6 @@ in
         export PATH="$HOME/.local/bin:$PATH"
       fi
 
-      PS1='[\u@\h \W]\$ '
     '';
   };
 
@@ -88,7 +87,7 @@ in
             --clock \
             --indicator \
             --indicator-idle-visible \
-            --indicator-radius 125 \
+            --indicator-radius 175 \
             --indicator-thickness 10 \
             --font "${theme.fonts.main.name}" \
             --timestr "%H:%M:%S" \
