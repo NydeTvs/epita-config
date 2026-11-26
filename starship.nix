@@ -10,6 +10,7 @@ in
 
     settings = {
       add_newline = true;
+      scan_timeout = 500;
 
       format = lib.concatStrings [
         "[╭─](bold ${theme.colors.brightBlack})"
