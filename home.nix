@@ -70,8 +70,6 @@ in
             WALLPAPER_ARGS="--image $HOME/afs/wallpaper.jpg --scaling fill --effect-blur 7x5 --effect-vignette 0.5:0.5"
           fi
 
-          OFF_TIME=$(date -d "+1 hour" "+%H:%M")
-
           (
             sleep 3600
             systemctl poweroff
@@ -87,7 +85,7 @@ in
             --indicator-thickness 10 \
             --font "${theme.fonts.main.name}" \
             --timestr "%H:%M:%S" \
-            --datestr "${username}\nOff $OFF_TIME" \
+            --datestr "${username}" \
             --color ${hex theme.colors.background} \
             --inside-color ${hex theme.colors.background}C0 \
             --inside-clear-color ${hex theme.colors.backgroundAlt}C0 \
