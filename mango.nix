@@ -75,8 +75,6 @@ in
     bind=super,Space,togglefloating
     bind=ALT,Tab,toggleoverview
 
-    default_layout=fair
-
     # Tag Keybinds
     bind=super,1,view,1
     bind=super,2,view,2
