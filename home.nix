@@ -23,7 +23,39 @@ in
     ./starship.nix
   ];
 
-  programs.bash.enable = true;
+  home.activation.backupExistingBashrc = lib.hm.dag.entryBefore [ "checkLinkTargets" ] ''
+    if [ -f "$HOME/.bashrc" ] && [ ! -L "$HOME/.bashrc" ]; then
+      mv -f "$HOME/.bashrc" "$HOME/.bashrc.backup"
+    fi
+  '';
+
+  programs.bash = {
+    enable = true;
+
+    shellAliases = {
+      ls = "ls --color=auto";
+      grep = "grep --color=auto -n";
+    };
+
+    sessionVariables = {
+      LANG = "en_US.utf8";
+      NNTPSERVER = "news.epita.fr";
+      EDITOR = "vim";
+    };
+
+    initExtra = ''
+      if [ -d "$HOME/afs/bin" ]; then
+        export PATH="$HOME/afs/bin:$PATH"
+      fi
+
+      if [ -d "$HOME/.local/bin" ]; then
+        export PATH="$HOME/.local/bin:$PATH"
+      fi
+
+      PS1='[\u@\h \W]\$ '
+    '';
+  };
+
 
   home.username = username;
   home.homeDirectory = "/home/${username}";
