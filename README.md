@@ -13,7 +13,7 @@
  - Jetbrains-Mono + Symbols Nerd Font
 
 ## Space Needed : 
-__~200Mo__ Compressed / 1.8Go Decompressed - Estimated Time to download : 45 seconds (in Epita machine rooms)
+__~200Mo__ Compressed / 1.8Go Decompressed - Estimated Time to download : 60 seconds (in Epita machine rooms)
 
 
 ## How to install :
