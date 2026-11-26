@@ -23,14 +23,7 @@ in
     ./starship.nix
   ];
 
-  home.activation.backupExistingBashrc = lib.hm.dag.entryBefore [ "checkLinkTargets" ] ''
-    if [ -e "$HOME/.bashrc" ] || [ -L "$HOME/.bashrc" ]; then
-      case "$(readlink "$HOME/.bashrc" 2>/dev/null)" in
-        /nix/store/*) ;;
-        *) mv -f "$HOME/.bashrc" "$HOME/.bashrc.backup" ;;
-      esac
-    fi
-  '';
+  home.file.".bashrc".force = true;
 
   programs.bash = {
     enable = true;
