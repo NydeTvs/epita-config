@@ -24,8 +24,11 @@ in
   ];
 
   home.activation.backupExistingBashrc = lib.hm.dag.entryBefore [ "checkLinkTargets" ] ''
-    if [ -f "$HOME/.bashrc" ] && [ ! -L "$HOME/.bashrc" ]; then
-      mv -f "$HOME/.bashrc" "$HOME/.bashrc.backup"
+    if [ -e "$HOME/.bashrc" ] || [ -L "$HOME/.bashrc" ]; then
+      case "$(readlink "$HOME/.bashrc" 2>/dev/null)" in
+        /nix/store/*) ;;
+        *) mv -f "$HOME/.bashrc" "$HOME/.bashrc.backup" ;;
+      esac
     fi
   '';
 
