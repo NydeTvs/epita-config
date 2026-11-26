@@ -11,6 +11,8 @@ in
     text = ''
       #!/bin/sh
       dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+      waybar &
+      aklog
       if [ -f "$HOME/afs/wallpaper.png" ]; then
         ${pkgs.swaybg}/bin/swaybg -i "$HOME/afs/wallpaper.png" -m fill &
       elif [ -f "$HOME/afs/wallpaper.jpg" ]; then
@@ -18,7 +20,6 @@ in
       else
         ${pkgs.swaybg}/bin/swaybg -c "${theme.colors.background}" &
       fi
-      waybar &
     '';
   };
 
